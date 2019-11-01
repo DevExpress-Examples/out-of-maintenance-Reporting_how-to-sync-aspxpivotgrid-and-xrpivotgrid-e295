@@ -34,12 +34,12 @@ Namespace WebApplication1
 			Return report
 		End Function
 
-		Public Function Resolve(ByVal reportEntry As String) As XtraReport
-			Select Case reportEntry
-				Case "PivotGrid"
-					Return CreatePivotGridReport()
-			End Select
-			Return New XtraReport()
-		End Function
-	End Class
+        Public Function Resolve(ByVal reportEntry As String) As XtraReport Implements IWebDocumentViewerReportResolver.Resolve
+            Select Case reportEntry
+                Case "PivotGrid"
+                    Return CreatePivotGridReport()
+            End Select
+            Return New XtraReport()
+        End Function
+    End Class
 End Namespace
